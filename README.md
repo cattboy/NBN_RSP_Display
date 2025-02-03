@@ -2,12 +2,6 @@
 
 Try the [live version](http://cattboy.github.io/NBN_RSP_Display/) of this application
 
-## Contributing
-
-Here are some pointers for contributing:
-
- - Fixing typographical error: [js/controller.js](js/controller.js)
- - Updating price/Adding plans: [data/all_plans.json](data/all_plans.json)
 
 ## License
 

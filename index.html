@@ -41,9 +41,9 @@
             </thead>
             <tbody>
                 <tr ng-repeat="contact in contacts | orderBy:'name'">
-                    <td>{{contact.name}}</td>
-                    <td>{{contact.phone}}</td>
-                    <td><a href="{{contact.website}}" target="_blank">Visit Website</a></td>
+                    <td>{{contacts.name}}</td>
+                    <td>{{contacts.phone}}</td>
+                    <td><a href="{{contacts.website}}" target="_blank">Visit Website</a></td>
                 </tr>
             </tbody>
         </table>

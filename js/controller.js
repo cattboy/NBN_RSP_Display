@@ -35,4 +35,6 @@ app.controller('ContactController', function($scope, $http) {
                     && (item.limit >= document.criteria.min_download_limit.value || item.limit === null)
                     && (item.price <= document.criteria.montly_fee.value || document.criteria.montly_fee.value == '')
                 );
+        };
+    };
 });

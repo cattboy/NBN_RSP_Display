@@ -7,7 +7,7 @@ app.controller('ContactController', function($scope, $http) {
     $scope.contacts = [];
     
     // Use a wildcard pattern to match any nbn_providers json file
-    fetch('./OUTPUT/nbn_providers*.json')
+    fetch('./OUTPUT/nbn_providers.json')
         .then(response => response.json())
         .then(data => {
             $scope.contacts = data;

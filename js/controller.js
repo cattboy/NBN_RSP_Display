@@ -3,20 +3,19 @@ var app = angular.module('contactApp', []);
 app.controller('ContactController', function($scope, $http) {
     $scope.contacts = [];
     
-    // Using a relative path to the data file
-    $http.get('./OUTPUT/nbn_providers_20250203_175414.json')
-        .success(function(data) {
-            console.log('Data loaded successfully:', data); // Debug log
-            // The data is already in the correct format, just assign it directly
+    // Use a wildcard pattern to match any nbn_providers json file
+    fetch('./OUTPUT/nbn_providers*.json')
+        .then(response => response.json())
+        .then(data => {
             $scope.contacts = data;
+            $scope.$apply();
         })
-        .error(function(error, status) {
-            console.error('Error loading contacts - Status:', status);
-            console.error('Error details:', error);
-            
-            // Add some sample data in case of error
+        .catch(error => {
+            console.error('Error loading data:', error);
+            // Show error message instead of sample data
             $scope.contacts = [
-                {name: "Sample Company", phone: "555-0101", website: "http://www.sample.com"}
+                {name: "Cannot load data file", phone: "-", website: "#"}
             ];
+            $scope.$apply();
         });
 });

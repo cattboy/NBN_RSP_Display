@@ -1,5 +1,199 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myApp">
+<head>
+        <title>NBN RSP Speed & Price Comparison</title>
+
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+        <script src="js/controller.js"></script>
+
+</head>
+<body ng-controller="ContactController">
+
+
+<noscript>
+<div style="height: 100%; width: 100%;top: 0; position:absolute; left: 0; border: 0; z-index:200;background:#FFFFFF;color:red;">
+<center><h2>Javascript est n&eacute;cessaire. / Javascript is required.</h2></center>
+</div>
+</noscript>
+
+<center>
+
+<h1>{{ 'TITLE' }}</h1>
+
+    <form name="criteria" novalidate>
+        <div class="criterion">
+    <fieldset>
+            <legend>{{ 'SELECTION_CRITERION' }}</legend>
+
+            <center>
+    <table class="criteria">
+            <tr>
+                <!-- <td>
+                    <b>{{ 'MINIMUM_REQUIREMENTS' }}</b><br/>
+        {{ 'DOWNLOAD_SPEED' }} (Mbps) : <input type="number" size="6" ng-model="min_down_speed" name="min_down_speed" min="0" max="100" value="0" integer /><br/>
+        {{ 'BANDWIDTH' }} (GB) : <input type="number" size="6" ng-model="min_download_limit" name="min_download_limit" min="0" max="100" value="0" integer />
+
+
+            </td> -->
+    <!-- <td></td> -->
+            <!-- <td> -->
+
+                    <!-- <b>{{ 'BUDGET' }}</b><br/>
+        {{ 'MAXIMUM_MONTHLY_FEE' }} ({{ 'DOLLAR_MONTH' }}) : <input type="number" size="6" ng-model="montly_fee" name="montly_fee" min="0" max="200" integer /><br/>
+
+            </td> -->
+            <td></td>
+                    <!-- <td>
+                        <b>{{ 'ORDER_BY' }}</b><br/>
+
+                        <input type="radio" ng-model="sort" name="order_by" id="order_by_price" value="order_by_price" ng-click="predicate = ['i_price','down_speed','limit'];" ng-checked="true">
+                        <label for="order_by_price">{{ 'LOWEST_PRICE' }}</label><br/>
+
+                        <input type="radio" ng-model="sort" name="order_by" id="order_by_limit" value="order_by_limit" ng-click="predicate = ['limit','i_price','down_speed'];">
+                        <label for="order_by_limit">{{ 'HIGHEST_BANDWIDTH_LIMIT' }}</label><br/>
+
+                        <input type="radio" ng-model="sort" name="order_by" id="order_by_down_speed" value="order_by_down_speed" ng-click="predicate = ['down_speed','i_price','limit'];">
+                        <label for="order_by_speed">{{ 'FASTEST_SPEED' }}</label><br/>
+
+                    </td> -->
+
+                <td>
+                    <b>{{ 'SERVICE_TYPE' }}</b><br/>
+                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_nbn" value="any" checked>{{ 'NBN' }}</label><br/>
+                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_vision" value="any" checked>{{ 'VISION' }}</label><br/>
+                    <!-- <label><input type="radio" ng-model="service_type" name="service_type" id="service_cable" value="cable">Cable</label><br/>
+                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_dsl" value="dsl">DSL</label><br/>
+                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_fiber" value="fiber">{{ 'FIBER' }}</label><br/>
+                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_other" value="other">{{ 'OTHER' }}</label><br/> -->
+
+                </td>
+            </tr>
+    </table>
+</center>
+</fieldset>
+             </div>
+
+        </form>
+  <br/>
+
+  <table class="contact-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Website</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="contact in contacts | orderBy:'name'">
+            <td style="text-align:left">{{contact.name}}</td>
+            <td>{{contact.phone}}</td>
+            <td><a href="{{contact.website}}" target="_blank">Visit Website</a></td>
+        </tr>
+    </tbody>
+</table>
+
+  <!-- <table class='plans'>
+        <th></th>
+        <th>{{ 'PLAN_NAME' }}</th>
+        <th>{{ 'DOWNLOAD' }}<br/><small>(Mbps)</small></th>
+        <th>{{ 'UPLOAD' }}<br/><small>(Mbps)</small></th>
+        <th>{{ 'BANDWIDTH_LIMIT' }}<br/><small>({{ 'GB_MONTH' }})</small></th>
+        <th>{{ 'MONTHLY_FEE' }}<br/><small>({{ 'DOLLAR_MONTH' }})</small></th>
+        <th></th>
+
+    <tr ng-repeat="plan in plans | filter:criteriaMatch() | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
+      <td><img src="{{plan.icon}}" height="16" width="16"/></td>
+      <td style="text-align:left">{{plan.isp}} {{plan.name}}</td>
+      <td>{{plan.down_speed}}</td>
+      <td>{{plan.up_speed}}</td>
+      <td>{{(plan.limit == null) && '&#8734;' || plan.limit}}</td>
+      <td>{{plan.price}}</td>
+      <td><a href="{{plan.link}}" target="_blank">{{ 'MORE_DETAILS' }}</a></td>
+    </tr> -->
+
+    <tr ng-hide="(plans | filter:criteriaMatch()).length">
+        <td colspan="7">
+                <h3>{{ 'NO_PLAN_FOUND' }} :(<br/>{{ 'NO_PLAN_FOUND_TIP' }}</h3>
+        </td>
+    </tr>
+  </table>
+
+
+
+  </center>
+
+<br/>
+<div ng-bind-html-unsafe="'FOOTNOTES'  " class="footer">
+</div>
+
+  <!--
+  Other resources:
+  http://www.dslreports.com/gbu/
+  -->
+
+<!-- Social links -->
+<div id="social" style="position: fixed; bottom: 0; left: 0; border: 0;z-index:100;padding:10px;padding-bottom:100px;width:130px;">
+    <div class="social_box">
+    <b>{{ 'SHARE_MSG' }}</b><br/>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a><br/>
+    <div class="g-plusone"></div><br/>
+    <div class="fb-like" data-href="https://cattboy.github.io/NBN_RSP_Display/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div><br/>
+    <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
+    </div>
+</div>
+
+
+<!-- Google Plus -->
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+<!-- Facebook -->
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s);
+ js.id = id;
+ js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Twitter -->
+<script>!function (d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (!d.getElementById(id)) {
+     js = d.createElement(s);
+     js.id = id;
+     js.src = "https://platform.twitter.com/widgets.js";
+     fjs.parentNode.insertBefore(js, fjs);
+ }
+}(document, "script", "twitter-wjs");</script>
+
+<!-- Analytics -->
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'key', 'cattboy.github.io');
+  ga('send', 'pageview');
+
+</script> -->
+</body>
+</html>
+
+
+
+<!-- 
+
+
+
 <!DOCTYPE html>
-<html ng-app="contactApp">
+<html ng-app="myApp">
 <head>
     <title>NBN RSP Speed & Price Comparison</title>
     <style>
@@ -27,6 +221,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
     <script src="js/controller.js"></script>
 </head>
+
+
 <body ng-controller="ContactController">
     <div class="container">
         <h1>Contact Directory</h1>
@@ -49,4 +245,4 @@
         </table>
     </div>
 </body>
-</html>
+</html> -->

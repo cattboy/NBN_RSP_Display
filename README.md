@@ -1,6 +1,6 @@
 ## Using the application
 
-Try the [live version](http://h3xstream.github.io/montreal_isp/) of this application
+Try the [live version](http://cattboy.github.io/NBN_RSP_Display/) of this application
 
 ## Contributing
 

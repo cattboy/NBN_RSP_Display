@@ -2,28 +2,7 @@
 <html ng-app="contactApp">
 <head>
     <title>Contact Directory</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .container {
-            text-align: center;
-            margin: 20px;
-        }
-    </style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
     <script src="js/controller.js"></script>
 </head>
@@ -31,7 +10,7 @@
     <div class="container">
         <h1>Contact Directory</h1>
         
-        <table>
+        <table class="contact-table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -41,9 +20,9 @@
             </thead>
             <tbody>
                 <tr ng-repeat="contact in contacts | orderBy:'name'">
-                    <td>{{contacts.name}}</td>
-                    <td>{{contacts.phone}}</td>
-                    <td><a href="{{contacts.website}}" target="_blank">Visit Website</a></td>
+                    <td style="text-align:left">{{contact.name}}</td>
+                    <td>{{contact.phone}}</td>
+                    <td><a href="{{contact.website}}" target="_blank">Visit Website</a></td>
                 </tr>
             </tbody>
         </table>

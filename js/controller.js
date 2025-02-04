@@ -20,7 +20,7 @@ app.controller('ContactController', function($scope, $http) {
     $scope.FASTEST_SPEED = 'Fastest speed';
     $scope.SERVICE_TYPE = 'Service type';
     $scope.NBN = 'NBN Plans (via NBN Co)';
-    $scope.VISION = 'VISION (via TPG FTTB)';
+    $scope.VISION = 'VISION (via Vision Network, formally TPG FTTB)';
     
     //Titles column
     $scope.PLAN_NAME = 'Plan Name';

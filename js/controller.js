@@ -28,7 +28,7 @@ app.controller('ContactController', function($scope, $http) {
     $scope.MONTHLY_FEE = 'Monthly Fee';
 
     $scope.MORE_DETAILS = 'More details';
-    $scope.NO_PLAN_FOUND = 'No plan found.';
+    $scope.NO_PLAN_FOUND = 'No import data or plans found.';
     $scope.NO_PLAN_FOUND_TIP = 'Not all filters need to be filled';
 
     $scope.DOLLAR_MONTH = '$/month';

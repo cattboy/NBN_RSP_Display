@@ -19,6 +19,8 @@ app.controller('ContactController', function($scope, $http) {
     $scope.LOWEST_PRICE = 'Lowest price';
     $scope.FASTEST_SPEED = 'Fastest speed';
     $scope.SERVICE_TYPE = 'Service type';
+    $scope.NBN = 'NBN Plans (via NBN Co)';
+    $scope.VISION = 'VISION (via TPG FTTB)';
     
     //Titles column
     $scope.PLAN_NAME = 'Plan Name';
@@ -60,15 +62,16 @@ app.controller('ContactController', function($scope, $http) {
         return function (item) {
             return (
                 (!document.criteria.service_nbn.checked || item.name.toLowerCase().indexOf('nbn') !== -1) &&
-                (!document.criteria.service_vision.checked || item.name.toLowerCase().indexOf('vision') !== -1 
-                || item.name.toLowerCase().indexOf('fibre') !== -1 || item.name.toLowerCase().indexOf('fibe') !== -1 || 
-                item.name.toLowerCase().indexOf('fttn') !== -1) &&
-                (!document.criteria.service_dsl.checked || item.name.toLowerCase().indexOf('dsl') !== -1) &&
-                (!document.criteria.service_other.checked || (item.name.toLowerCase().indexOf('fiber') === -1 && item.name.toLowerCase().indexOf('fibre') === -1 && item.name.toLowerCase().indexOf('fibe') === -1 
-                && item.name.toLowerCase().indexOf('fttn') === -1 && item.name.toLowerCase().indexOf('câble') === -1 && item.name.toLowerCase().indexOf('cable') === -1 && item.name.toLowerCase().indexOf('dsl') === -1)) &&
-                item.down_speed >= document.criteria.min_down_speed.value
-                    && (item.limit >= document.criteria.min_download_limit.value || item.limit === null)
-                    && (item.price <= document.criteria.montly_fee.value || document.criteria.montly_fee.value == '')
+                (!document.criteria.service_vision.checked || item.name.toLowerCase().indexOf('vision') !== -1 )
+
+                // || item.name.toLowerCase().indexOf('fibre') !== -1 || item.name.toLowerCase().indexOf('fibe') !== -1 || 
+                // item.name.toLowerCase().indexOf('fttn') !== -1) &&
+                // (!document.criteria.service_dsl.checked || item.name.toLowerCase().indexOf('dsl') !== -1) &&
+                // (!document.criteria.service_other.checked || (item.name.toLowerCase().indexOf('fiber') === -1 && item.name.toLowerCase().indexOf('fibre') === -1 && item.name.toLowerCase().indexOf('fibe') === -1 
+                // && item.name.toLowerCase().indexOf('fttn') === -1 && item.name.toLowerCase().indexOf('câble') === -1 && item.name.toLowerCase().indexOf('cable') === -1 && item.name.toLowerCase().indexOf('dsl') === -1)) &&
+                // item.down_speed >= document.criteria.min_down_speed.value
+                //     && (item.limit >= document.criteria.min_download_limit.value || item.limit === null)
+                //     && (item.price <= document.criteria.montly_fee.value || document.criteria.montly_fee.value == '')
                 );
         };
     };

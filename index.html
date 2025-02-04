@@ -63,8 +63,8 @@
 
                 <td>
                     <b>{{ SERVICE_TYPE }}</b><br/>
-                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_nbn" value="nbn" checked>{{ 'NBN' }}</label><br/>
-                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_vision" value="vision" >{{ 'VISION' }}</label><br/>
+                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_nbn" value="nbn" checked>{{ NBN }}</label><br/>
+                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_vision" value="vision" >{{ VISION }}</label><br/>
                 </td>
             </tr>
     </table>
@@ -92,7 +92,7 @@
     </tbody>
 </table>
 
-  <!-- <table class='plans'>
+  <!-- <table class='contact-table'>
         <th></th>
         <th>{{ 'PLAN_NAME' }}</th>
         <th>{{ 'DOWNLOAD' }}<br/><small>(Mbps)</small></th>
@@ -101,7 +101,7 @@
         <th>{{ 'MONTHLY_FEE' }}<br/><small>({{ 'DOLLAR_MONTH' }})</small></th>
         <th></th>
 
-    <tr ng-repeat="plan in plans | filter:criteriaMatch() | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
+    <tr ng-repeat="contact in contacts | filter:criteriaMatch() | orderBy:predicate:true"  ng-class-odd="'tr_odd'">
       <td><img src="{{plan.icon}}" height="16" width="16"/></td>
       <td style="text-align:left">{{plan.isp}} {{plan.name}}</td>
       <td>{{plan.down_speed}}</td>
@@ -111,7 +111,7 @@
       <td><a href="{{plan.link}}" target="_blank">{{ MORE_DETAILS }}</a></td>
     </tr> -->
 
-    <tr ng-hide="(plans | filter:criteriaMatch()).length">
+    <tr ng-hide="(contacts | filter:criteriaMatch()).length">
         <td colspan="7">
                 <h3>{{ NO_PLAN_FOUND }} :(<br/>{{ NO_PLAN_FOUND_TIP }}</h3>
         </td>

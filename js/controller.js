@@ -9,7 +9,7 @@ app.controller('ContactController', function($scope, $http) {
     $scope.TITLE = 'NBN RSP Speed & Price Comparison';
 
     //Selection criterion bloc
-    $scope.SELECTION_CRITERION = 'Selection criterion';
+    $scope.SELECTION_CRITERION = 'Filter & search';
     $scope.MINIMUM_REQUIREMENTS = 'Minimum requirements';
     $scope.DOWNLOAD_SPEED = 'Download speed';
     $scope.BANDWIDTH = 'Bandwidth';
@@ -37,6 +37,7 @@ app.controller('ContactController', function($scope, $http) {
     $scope.GB_MONTH = 'GB/month';
 
     $scope.SHARE_MSG = 'Share this tool';
+    $scope.TIP_MSG = 'Tip creativity';
     $scope.FOOTNOTES = 'This application was developed by Jared Vosters using <a href="http://angularjs.org/">AngularJS</a>. ' +
         'It is release under <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons</a>.';
 

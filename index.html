@@ -138,23 +138,59 @@
 
 
     <!-- Social links -->
-    <div id="social" style="position: fixed; bottom: 0; left: 0; border: 0;z-index:100;padding:10px;padding-bottom:100px;width:150px;">
-        <div class="social_box">
-        <b>{{ SHARE_MSG }}</b><br/>
-        <a href="https://twitter.com/intent/tweet?text=Check%20this%20out!" target="_blank" rel="noopener noreferrer">
-            <img src="https://abs.twimg.com/favicons/twitter.2.ico" alt="Tweet" style="width: 32px; height: 32px; vertical-align: middle;">
-        </a>
-        <!-- <div class="fb-like" data-href="https://cattboy.github.io/NBN_RSP_Display/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div> -->
-        <div class="fb-like" 
-        data-href="https://cattboy.github.io/NBN_RSP_Display/" 
-        data-layout="button_count" 
-        data-action="like" 
-        data-size="small" 
-        data-share="false">
-        </div><br/>
-        <a href="https://www.reddit.com/submit" onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('https://cattboy.github.io/NBN_RSP_Display/') + '&title=' + encodeURIComponent('NBN RSP Speed & Price Comparison'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800'); return false;">
-            <img src="https://www.redditstatic.com/spreddit10.gif" alt="Share on Reddit">
-        </a>
+    <div id="social" style="position: fixed; bottom: 20px; left: 20px; z-index:100;">
+        <div class="social_box" style="
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 200px;
+            width: fit-content;">
+            
+       
+            <b>{{ TIP_MSG }}</b>          
+
+            <a href="https://www.buymeacoffee.com/123youbeatme" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+                     alt="Buy Me a Coffee" 
+                     style="height: 50px; width: auto;">
+            </a>
+            
+            <!-- <a href="https://www.paypal.me/123youbeatme" target="_blank" rel="noopener noreferrer">
+                <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" 
+                     alt="Donate with PayPal" 
+                     style="height: 50px; width: auto;">
+            </a> -->
+            <b>{{ SHARE_MSG }}</b>
+
+            <div style="display: flex; gap: 10px; align-items: center;">     
+                <a href="https://twitter.com/intent/tweet?text=Check%20this%20out!" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <img src="https://abs.twimg.com/favicons/twitter.2.ico" 
+                         alt="Tweet" 
+                         style="width: 32px; height: 32px;">
+                </a>
+                
+                <div class="fb-like" 
+                     data-href="https://cattboy.github.io/NBN_RSP_Display/" 
+                     data-layout="button_count" 
+                     data-action="like" 
+                     data-size="small" 
+                     data-share="false">
+                </div>
+            </div>
+
+            <a href="https://www.reddit.com/submit" 
+            onclick="window.open('https://www.reddit.com/submit?url=' + encodeURIComponent('https://cattboy.github.io/NBN_RSP_Display/') + '&title=' + encodeURIComponent('NBN RSP Speed & Price Comparison'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=800'); return false;">
+             <img src="https://www.redditstatic.com/spreddit10.gif" 
+                  alt="Share on Reddit">
+            </a>
+
         </div>
     </div>
 

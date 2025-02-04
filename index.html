@@ -1,7 +1,7 @@
 <!doctype html>
 <html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myApp">
 <head>
-        <title>NBN RSP Speed & Price Comparison</title>
+        <title>{{ 'TITLE' }}</title>
 
         <link href="//fonts.googleapis.com/css?family=Titillium+Web:400,600" rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -65,11 +65,6 @@
                     <b>{{ 'SERVICE_TYPE' }}</b><br/>
                     <label><input type="radio" ng-model="service_type" name="service_type" id="service_nbn" value="nbn" checked>{{ 'NBN' }}</label><br/>
                     <label><input type="radio" ng-model="service_type" name="service_type" id="service_vision" value="vision" >{{ 'VISION' }}</label><br/>
-                    <!-- <label><input type="radio" ng-model="service_type" name="service_type" id="service_cable" value="cable">Cable</label><br/>
-                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_dsl" value="dsl">DSL</label><br/>
-                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_fiber" value="fiber">{{ 'FIBER' }}</label><br/>
-                    <label><input type="radio" ng-model="service_type" name="service_type" id="service_other" value="other">{{ 'OTHER' }}</label><br/> -->
-
                 </td>
             </tr>
     </table>
